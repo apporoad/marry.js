@@ -2,14 +2,16 @@
 
 
 
-exports.config = (oneOrArray, config)=>{
+exports.law =  law =>{
 
 }
 
-exports.configOne = (one, config) =>{
+exports.book  = (oneOrPairArray, config)=>{
 
 }
 
-exports.matches = (one, others)=>{
+exports.touch = (me, others)=>{
     
 }
+
+exports.marry =(array) =>{}
