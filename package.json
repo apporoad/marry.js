@@ -1,0 +1,22 @@
+{
+  "name": "marry.js",
+  "version": "1.0.0",
+  "description": "match each other",
+  "main": "index.js",
+  "scripts": {
+    "test": "qunit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apporoad/marry.js.git"
+  },
+  "keywords": [
+    "match"
+  ],
+  "author": "apporoad",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/apporoad/marry.js/issues"
+  },
+  "homepage": "https://github.com/apporoad/marry.js#readme"
+}
