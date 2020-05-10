@@ -31,6 +31,7 @@ var persons = [
 // yellow demands
 marry.book(persons[1] , {
     love : [ persons[5] , persons[6]],
-    must : (self , another ,options ) =>{ }
+    must : (self , another ,options ) =>{ },
+    pluses : []
 })
 
