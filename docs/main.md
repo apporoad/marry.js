@@ -16,13 +16,16 @@ marry.boo({}, {
     must :  async  (self , another, options) =>{
         console.log(options.others)
         console.log(options.law)
-    },   // or Array   support dson
+    },   // or Array   support dson 
     pluses : {
         name : 'height',
         point : 4,
         item : async (self , another , options) =>{ }
-    }
+    } // 支持 function dson
 })
+
+
+// pluses 也支持 [ dson ,dson ]   [ function ，dson ]
 
 ```
 

@@ -35,3 +35,4 @@ marry.book(persons[1] , {
     pluses : []
 })
 
+//todo test
