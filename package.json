@@ -4,7 +4,7 @@
   "description": "match each other",
   "main": "index.js",
   "scripts": {
-    "test": "qunit"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
     "lisa.utils": "^2.0.0"
   },
   "devDependencies": {
-    "dson.js": "^1.0.3"
+    "dson.js": "^1.0.3",
+    "jest": "^26.0.1"
   }
 }

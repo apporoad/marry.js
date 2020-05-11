@@ -105,3 +105,6 @@ dist
 
 .vscode/
 docs/
+
+doTest.js
+test.js

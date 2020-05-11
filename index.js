@@ -27,7 +27,7 @@ var innerTouchOne = async (me, you, all, map, law) => {
         isLove: false,
         data: you
     }
-    var demands = map[me]
+    var demands = map.get(me)
     if (!demands || !uType.isObject(demands)) {
         return Object.assign({}, resultTemplate, {
             success: true
@@ -152,18 +152,16 @@ var innerTouch = async (me, all, map, law) => {
     if (array.length > 0) {
         array = utils.ArraySort(array, (one, two) => {
             if (one.isLove != two.isLove) {
-                return (one.isLove ? 2 : 1) - (two.isLove ? 2 : 1)
+                return  (two.isLove ? 2 : 1) - (one.isLove ? 2 : 1) 
             } else {
-                return one.point - two.point
+                return two.point - one.point
             }
         })
         result.betrothal = array[0].data
         for (var i = 1; i < array.length; i++) {
-            result.benches.push({
-                data: array[i].data,
-                point: array[i].point
-            })
+            result.benches.push(array[i].data)
         }
+        result.debug = array
     }
     return result
 }
@@ -172,21 +170,21 @@ var innerTouch = async (me, all, map, law) => {
 function Marry(law) {
     var _law = law
     var _this = this
-    var _map = new Map()
+    var _map = new WeakMap()
     this.book = (oneOrPairArray, demands) => {
         if (oneOrPairArray && demands) {
-            _map[oneOrPairArray] = demands
+            _map.set(oneOrPairArray ,demands)
         } else if (uType.isArray(oneOrPairArray) && oneOrPairArray.length > 0) {
             //   [ one , demands]  , null
             if (!uType.isArray(oneOrPairArray[0]) && oneOrPairArray.length == 2) {
-                _map[oneOrPairArray[0]] = oneOrPairArray[1]
+                _map.set(oneOrPairArray[0], oneOrPairArray[1])
             } else {
                 // [ [one,demands], [two,demands]]  , null
                 oneOrPairArray.forEach(element => {
                     if (!uType.isArray(element) || element.length != 2) {
                         throw Error('marry.js -> book  : error params')
                     }
-                    _map[element[0]] = element[1]
+                    _map.set(element[0], element[1])
                 })
             }
         } else {
