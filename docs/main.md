@@ -11,7 +11,7 @@
 
 var marry = M()
 
-marry.boo({}, {
+marry.book({}, {
     love : 'one'   , //  or Array  , or Function AsyncFunction　 \　suppport　DSON
     must :  async  (self , another, options) =>{
         console.log(options.others)
